@@ -1,0 +1,188 @@
+$bg-red-pressed: #f1444d;
+$bg-yellow-pressed: #fddf5d;
+$bg-green-pressed: #20e576;
+$bg-blue-pressed: #3390f3;
+$bg-red: #ab3037;
+$bg-yellow: #d4b73b;
+$bg-green: #18a154;
+$bg-blue: #165292;
+$bg-btn-yellow: #fddf5d;
+$bg-white: #ffffff;
+$bg-black: #000000;
+$bg-grey: #a8a9cc;
+$bg-border: #353030;
+$bg-page-color: #e3d1b9;
+$font-red: #ff0000;
+$btn-width: 260px;
+$btn-height: 260px;
+$btn-small-width: 30px;
+$btn-small-height: 30px;
+$btn-toggle-width: 60px;
+$btn-toggle-color: #0577f3;
+$btn-toggle-front-color: #153f72;
+
+body {
+  background-color: $bg-page-color;
+}
+
+.simon {
+  display: block;
+  position: relative;
+  width: 2 * $btn-width;
+  height: 2 * $btn-height;
+  border-radius: 100%;
+  border: 15px solid $bg-border;
+  box-shadow: 0 0 25px $bg-border;
+
+  .btn {
+    border: 10px solid $bg-border;
+    height: $btn-height;
+    width: $btn-width;
+
+    &.green {
+      background-color: $bg-green;
+      border-radius: 100% 0 0 0;
+
+      &:active, &.active {
+        background-color: $bg-green-pressed;
+      }
+    }
+
+    &.red {
+      background-color: $bg-red;
+      border-radius: 0 100% 0 0;
+
+      &:active, &.active {
+        background-color: $bg-red-pressed;
+      }
+    }
+
+    &.yellow {
+      background-color: $bg-yellow;
+      border-radius: 0 0 100% 0;
+
+      &:active, &.active {
+        background-color: $bg-yellow-pressed;
+      }
+    }
+
+    &.blue {
+      background-color: $bg-blue;
+      border-radius: 0 0 0 100%;
+
+      &:active, &.active {
+        background-color: $bg-blue-pressed;
+      }
+    }
+
+  }
+
+  .ctrls {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2em;
+    position: absolute;
+    display: block;
+    background: linear-gradient($bg-black, $bg-grey);
+    width: $btn-width;
+    height: $btn-width;
+    border-radius: 100%;
+    border: 15px solid $bg-border;
+    left: 23%;
+    top: 23%;
+
+    .brand {
+      margin-top: 31px;
+      text-align: center;
+      font-size: 2em;
+      color: $bg-white;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      margin-top: 10px;
+      height: 30%;
+      width: 100%;
+    }
+
+    .display {
+      width: 40px;
+      height: 30px;
+      border: 0;
+      border-radius: 8px;
+      background: $bg-black;
+      color: $font-red;
+      padding: 0 6px;
+      margin: 0;
+    }
+
+    .btn-div {
+      text-align: center;
+
+      .btn-round {
+        border-radius: 100%;
+        background: $bg-white;
+        border: 5px solid $bg-border;
+        box-shadow: 0 2px 4px  $bg-border;
+        height: $btn-small-height;
+        width: $btn-small-width;
+      }
+
+      label {
+        display: block;
+        margin-top: 5px;
+      }
+
+      .red {
+        background: $bg-red-pressed;
+
+        &.pressed {
+          box-shadow: 0 0 15px $bg-red-pressed;
+        }
+      }
+
+      .yellow {
+        background: $bg-btn-yellow;
+
+        &.pressed {
+          box-shadow: 0 0 15px $bg-btn-yellow;
+        }
+      }
+    }
+  }
+}
+
+.toggle-button {
+  height: $btn-small-height;
+  width: $btn-toggle-width;
+  border: 5px solid $btn-toggle-color;
+  border-radius: 5px;
+  background: $btn-toggle-color;
+  margin: 10px auto 0 auto;
+
+  .toggle {
+    height: 25px;
+    width: 25px;
+    border-radius: 3px;
+    border: 3px solid $btn-toggle-front-color;
+    background: $btn-toggle-front-color;
+
+    &.off {
+      float: left;
+    }
+
+    &.on {
+      float: right;
+    }
+  }
+}
+
+.attribution {
+  margin-top: 30px;
+
+  a {
+    text-decoration: none;
+  }
+}
